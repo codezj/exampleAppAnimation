@@ -19,16 +19,16 @@ export function getStylesFromClasses(names: string | string[],
                     let styleRule = rules[j] as unknown as CSSStyleSheet;
                     console.log(styleRule,'styleRules----styleRulestyleRule');
                     if ( styleRule instanceof CSSStyleRule){
-                        
+                        // result = styleRule.style;
                         if (elem.matches(styleRule.selectorText)){
                             for (let k = 0; k < styleRule.style.length; k++){
                                 console.log(k,'k kkkkkk');
 
-                                
+                                result = []
                                 let index: any = styleRule.style[k]
                                 console.log(styleRule.style[k],result[index],styleRule.style[index] );
                                 
-                                // result[index] = styleRule.style[index];
+                                result[index] = styleRule.style[index];
                             }
     
                         }
